@@ -1,14 +1,8 @@
 'use strict';
-const media = {
-  remind: {
-    camera: {src: 'https://remind-applied.github.io/assets/videos/state/camera-pan/01.mp4?v=ba80d41', label: 'ReMind camera motion demonstration', caption: 'Hidden world state continues evolving as the camera moves away and returns.'},
-    occlusion: {src: 'https://remind-applied.github.io/assets/videos/state/occlusion/01.mp4?v=ba80d41', label: 'ReMind occlusion demonstration', caption: 'Events continue behind an occluder and return with a coherent, evolved state.'}
-  },
-  motion: {
-    driving: {src: 'https://github.com/Tianshuo-Xu/Motion-Forcing/releases/download/v0.1-assets/more_driving_scene1--ours-right-cut-in.mp4', poster: 'https://github.com/Tianshuo-Xu/Motion-Forcing/releases/download/v0.1-assets/more_driving_scene1--ours-right-cut-in.webp', label: 'Motion Forcing driving demonstration', caption: 'Control other-agent motion for physically coherent driving scenes.'},
-    ego: {src: 'https://github.com/Tianshuo-Xu/Motion-Forcing/releases/download/v0.1-assets/driving_ego_action--ours-right.mp4', poster: 'https://github.com/Tianshuo-Xu/Motion-Forcing/releases/download/v0.1-assets/driving_ego_action--ours-right.png', label: 'Motion Forcing ego control demonstration', caption: 'Steer camera motion independently of other objects in the driving scene.'},
-    robot: {src: 'https://github.com/Tianshuo-Xu/Motion-Forcing/releases/download/v0.1-assets/embodied_ai--case1--action1.mp4', poster: 'https://github.com/Tianshuo-Xu/Motion-Forcing/releases/download/v0.1-assets/embodied_ai--case1--action1.png', label: 'Motion Forcing robotic manipulation demonstration', caption: 'Transfer controllable generation to robotic-arm manipulation.'}
-  }
+const motionDemos = {
+  driving: {src: 'assets/demos/motion-driving.mp4', poster: 'assets/demos/motion-driving.jpg', label: 'Motion Forcing: driving control inputs above two synchronized generated videos', caption: 'Compare left cut-in + braking with right cut-in. Control inputs stay visible above synchronized results.'},
+  ego: {src: 'assets/demos/motion-ego.mp4', poster: 'assets/demos/motion-ego.jpg', label: 'Motion Forcing: left and right ego-motion controls above synchronized generated videos', caption: 'Same initial scene, left versus right ego motion. The requested trajectory and generated motion are shown together.'},
+  robot: {src: 'assets/demos/motion-robot.mp4', poster: 'assets/demos/motion-robot.jpg', label: 'Motion Forcing: two robotic manipulation controls above synchronized generated videos', caption: 'Same robotic scene, two action controls. Compare each control arrow with its generated manipulation.'}
 };
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const saveData = Boolean(navigator.connection?.saveData);
@@ -16,20 +10,49 @@ function loadVideo(video, autoplay = false) {
   if (!video.getAttribute('src') && video.dataset.src) { video.src = video.dataset.src; video.load(); }
   if (autoplay && !reducedMotion && !saveData) video.play().catch(() => {});
 }
+function selectButton(buttons, selected) {
+  buttons.forEach(button => { button.classList.toggle('selected', button === selected); button.setAttribute('aria-pressed', String(button === selected)); });
+}
 document.querySelectorAll('.project').forEach(project => {
   const video = project.querySelector('video');
   const error = project.querySelector('.video-error');
   video.addEventListener('error', () => { error.hidden = false; });
   video.addEventListener('loadeddata', () => { error.hidden = true; });
-  project.querySelectorAll('[data-demo]').forEach(button => button.addEventListener('click', () => {
-    const demo = media[project.dataset.project][button.dataset.demo];
-    project.querySelectorAll('[data-demo]').forEach(tab => { tab.classList.toggle('selected', tab === button); tab.setAttribute('aria-pressed', String(tab === button)); });
+  const demoButtons = project.querySelectorAll('[data-demo]');
+  demoButtons.forEach(button => button.addEventListener('click', () => {
+    const demo = motionDemos[button.dataset.demo];
+    selectButton(demoButtons, button);
     video.pause(); video.removeAttribute('src'); video.dataset.src = demo.src;
-    if (demo.poster) video.poster = demo.poster; else video.removeAttribute('poster');
+    video.poster = demo.poster;
     video.setAttribute('aria-label', demo.label); error.hidden = true;
     project.querySelector('.demo-caption').textContent = demo.caption;
-    loadVideo(video, true);
+    loadVideo(video);
+    video.play().catch(() => {});
   }));
+  const chapters = project.querySelectorAll('[data-chapter]');
+  if (chapters.length) {
+    let pendingSeek = null;
+    let fullReel = true;
+    function applySeek() {
+      if (pendingSeek === null || video.readyState < 1) return;
+      video.currentTime = Math.min(pendingSeek, video.duration);
+      pendingSeek = null;
+      video.play().catch(() => {});
+    }
+    video.addEventListener('loadedmetadata', applySeek);
+    chapters.forEach(button => button.addEventListener('click', () => {
+      fullReel = button.dataset.chapter === 'overview';
+      selectButton(chapters, button);
+      pendingSeek = Number(button.dataset.start);
+      loadVideo(video);
+      applySeek();
+    }));
+    video.addEventListener('timeupdate', () => {
+      if (fullReel) return;
+      const chapter = video.currentTime < Number(chapters[2].dataset.start) ? chapters[1] : chapters[2];
+      selectButton(chapters, chapter);
+    });
+  }
 });
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver(entries => entries.forEach(entry => {

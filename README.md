@@ -17,12 +17,16 @@ A static research homepage for GitHub Pages at https://tianshuo-xu.github.io/.
 - `styles.css`: typography and desktop/mobile layout.
 - `assets/portrait.jpg`: the supplied original portrait.
 
-The videos are served by the original public project sites and GitHub release assets. No copied video files or private research repositories are included.
+The homepage serves compact, edited showcase videos in `assets/demos/`. ReMind combines eight complete examples into two chapters at original speed. Each Motion Forcing clip keeps two control images visible above synchronized results. `assets/demos/sources.json` records the original official project URLs.
 
 ## Local preview
 
 ```sh
-python3 -m http.server 8765
+python3 scripts/serve_preview.py
 ```
 
-Open http://localhost:8765. No build step or package installation is required. GitHub Pages should serve the root of the `main` branch. `.nojekyll` enables direct static publishing.
+Open http://localhost:8765. The preview server supports byte-range requests so video seeking and chapter jumps work locally. No build step or package installation is required. GitHub Pages should serve the root of the `main` branch. `.nojekyll` enables direct static publishing.
+
+### Rebuild showcase videos
+
+Install FFmpeg separately, then run `python3 scripts/build_demos.py`. Downloaded inputs are cached in `.media-cache/` (ignored by Git). An optional `--cache /path` or `--proxy http://host:port` can be supplied. The build preserves full source sequences and playback speed, strips audio, and produces H.264 MP4s plus JPEG posters. If the ReMind chapter duration changes, update the `data-start` value of the occlusion chapter in `index.html` to match `remind_chapter_start` in `sources.json`.

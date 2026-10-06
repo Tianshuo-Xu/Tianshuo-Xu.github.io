@@ -46,22 +46,34 @@
       <div class="section-heading"><div><p class="eyebrow">01 / Research</p><h2 id="research-title">Highlighted research<span class="accent">.</span></h2></div><p>Persistent memory.<br>Physically consistent motion.</p></div>
       <div class="projects">
         <article class="project" data-project="remind">
-          <div class="project-topline"><span class="project-number">01</span><span class="venue-badge">NeurIPS 2026</span></div>
-          <h3>ReMind</h3><p class="project-subtitle">Teaching video generators to remember.</p>
-          <div class="demo-tabs" role="group" aria-label="ReMind video examples"><button type="button" class="selected" aria-pressed="true" data-demo="camera">Camera motion</button><button type="button" aria-pressed="false" data-demo="occlusion">Occlusion</button></div>
-          <div class="video-frame"><video controls muted loop playsinline preload="none" aria-label="ReMind camera motion demonstration" data-src="https://remind-applied.github.io/assets/videos/state/camera-pan/01.mp4?v=ba80d41"></video><div class="video-error" hidden>Video unavailable here. <a href="https://remind-applied.github.io/#state" target="_blank" rel="noopener noreferrer">View on the project page ↗</a></div></div>
-          <p class="demo-caption" aria-live="polite">Hidden world state continues evolving as the camera moves away and returns.</p>
-          <p class="project-description">A causal video generator with dynamic memory: objects and events keep evolving through camera motion, occlusion, and changes in visibility.</p>
-          <div class="project-links"><a href="https://remind-applied.github.io/" target="_blank" rel="noopener noreferrer">Project <span aria-hidden="true">↗</span></a><a href="https://arxiv.org/abs/2605.25333" target="_blank" rel="noopener noreferrer">Paper <span aria-hidden="true">↗</span></a><a href="https://github.com/Applied-Intuition-Open-Source/ReMind" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">↗</span></a></div>
+          <div class="project-copy">
+            <div class="project-topline"><span class="project-number">01</span><span class="venue-badge">NeurIPS 2026</span></div>
+            <h3>ReMind</h3><p class="project-subtitle">Teaching video generators to remember.</p>
+            <p class="project-description">A causal video generator with dynamic memory: objects and events keep evolving through camera motion, occlusion, and changes in visibility.</p>
+            <p class="project-takeaway">The view disappears.<br>The world keeps moving.</p>
+            <div class="project-links"><a href="https://remind-applied.github.io/" target="_blank" rel="noopener noreferrer">Project ↗</a><a href="https://arxiv.org/abs/2605.25333" target="_blank" rel="noopener noreferrer">Paper ↗</a><a href="https://github.com/Applied-Intuition-Open-Source/ReMind" target="_blank" rel="noopener noreferrer">Code ↗</a></div>
+          </div>
+          <div class="project-demo">
+            <div class="demo-tabs" role="group" aria-label="ReMind reel chapters"><button type="button" class="selected" aria-pressed="true" data-chapter="overview" data-start="0">Full reel</button><button type="button" aria-pressed="false" data-chapter="camera" data-start="0">Camera motion</button><button type="button" aria-pressed="false" data-chapter="occlusion" data-start="5.0625">Occlusion &amp; light</button></div>
+            <div class="video-frame"><video controls muted loop playsinline preload="none" aria-label="ReMind: eight complete examples of camera motion, occlusion, and light changes" data-src="assets/demos/remind-overview.mp4" poster="assets/demos/remind-overview.jpg"></video><div class="video-error" hidden>Video unavailable here. <a href="https://remind-applied.github.io/#state" target="_blank" rel="noopener noreferrer">View on the project page ↗</a></div></div>
+            <p class="demo-caption">Eight examples, two chapters. Complete sequences at original speed: visible → hidden → evolved.</p>
+            <a class="demo-more" href="https://remind-applied.github.io/#state" target="_blank" rel="noopener noreferrer">Explore all examples ↗</a>
+          </div>
         </article>
         <article class="project" data-project="motion">
-          <div class="project-topline"><span class="project-number">02</span><span class="venue-badge">NeurIPS 2026</span></div>
-          <h3>Motion Forcing</h3><p class="project-subtitle">Controllable motion, consistent physics.</p>
-          <div class="demo-tabs" role="group" aria-label="Motion Forcing video examples"><button type="button" class="selected" aria-pressed="true" data-demo="driving">Driving</button><button type="button" aria-pressed="false" data-demo="ego">Ego control</button><button type="button" aria-pressed="false" data-demo="robot">Robotic manipulation</button></div>
-          <div class="video-frame"><video controls muted loop playsinline preload="none" aria-label="Motion Forcing driving demonstration" data-src="https://github.com/Tianshuo-Xu/Motion-Forcing/releases/download/v0.1-assets/more_driving_scene1--ours-right-cut-in.mp4" poster="https://github.com/Tianshuo-Xu/Motion-Forcing/releases/download/v0.1-assets/more_driving_scene1--ours-right-cut-in.webp"></video><div class="video-error" hidden>Video unavailable here. <a href="https://tianshuo-xu.github.io/Motion-Forcing/" target="_blank" rel="noopener noreferrer">View on the project page ↗</a></div></div>
-          <p class="demo-caption" aria-live="polite">Control other-agent motion for physically coherent driving scenes.</p>
-          <p class="project-description">A decoupled framework for robust video generation that separates camera and object control, with applications in driving, rigid-body dynamics, and robotic grasping.</p>
-          <div class="project-links"><a href="https://tianshuo-xu.github.io/Motion-Forcing/" target="_blank" rel="noopener noreferrer">Project <span aria-hidden="true">↗</span></a><a href="https://arxiv.org/abs/2603.10408" target="_blank" rel="noopener noreferrer">Paper <span aria-hidden="true">↗</span></a><a href="https://github.com/Tianshuo-Xu/Motion-Forcing" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">↗</span></a></div>
+          <div class="project-copy">
+            <div class="project-topline"><span class="project-number">02</span><span class="venue-badge">NeurIPS 2026</span></div>
+            <h3>Motion Forcing</h3><p class="project-subtitle">Controllable motion, consistent physics.</p>
+            <p class="project-description">A decoupled framework for robust video generation that separates camera and object control, with applications in driving, rigid-body dynamics, and robotic grasping.</p>
+            <p class="project-takeaway">Same scene. Different controls.<br>Motion follows your intent.</p>
+            <div class="project-links"><a href="https://tianshuo-xu.github.io/Motion-Forcing/" target="_blank" rel="noopener noreferrer">Project ↗</a><a href="https://arxiv.org/abs/2603.10408" target="_blank" rel="noopener noreferrer">Paper ↗</a><a href="https://github.com/Tianshuo-Xu/Motion-Forcing" target="_blank" rel="noopener noreferrer">Code ↗</a></div>
+          </div>
+          <div class="project-demo">
+            <div class="demo-tabs" role="group" aria-label="Motion Forcing control examples"><button type="button" class="selected" aria-pressed="true" data-demo="driving">Driving</button><button type="button" aria-pressed="false" data-demo="ego">Ego motion</button><button type="button" aria-pressed="false" data-demo="robot">Robotics</button></div>
+            <div class="video-frame"><video controls muted loop playsinline preload="none" aria-label="Motion Forcing: driving control inputs above two synchronized generated videos" data-src="assets/demos/motion-driving.mp4" poster="assets/demos/motion-driving.jpg"></video><div class="video-error" hidden>Video unavailable here. <a href="https://tianshuo-xu.github.io/Motion-Forcing/" target="_blank" rel="noopener noreferrer">View on the project page ↗</a></div></div>
+            <p class="demo-caption" aria-live="polite">Compare left cut-in + braking with right cut-in. Control inputs stay visible above synchronized results.</p>
+            <a class="demo-more" href="https://tianshuo-xu.github.io/Motion-Forcing/" target="_blank" rel="noopener noreferrer">Explore all controls ↗</a>
+          </div>
         </article>
       </div>
     </section>

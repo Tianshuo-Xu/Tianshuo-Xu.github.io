@@ -1,0 +1,87 @@
+{
+  "remind_chapter_start": 5.0625,
+  "remind_duration": 10.125,
+  "editing": "Complete sequences, original speed; synchronized control/result pairs.",
+  "sources": [
+    {
+      "file": "camera-pan-01.mp4",
+      "url": "https://remind-applied.github.io/assets/videos/state/camera-pan/01.mp4?v=ba80d41"
+    },
+    {
+      "file": "camera-pan-02.mp4",
+      "url": "https://remind-applied.github.io/assets/videos/state/camera-pan/02.mp4?v=ba80d41"
+    },
+    {
+      "file": "camera-pan-03.mp4",
+      "url": "https://remind-applied.github.io/assets/videos/state/camera-pan/03.mp4?v=ba80d41"
+    },
+    {
+      "file": "camera-pan-04.mp4",
+      "url": "https://remind-applied.github.io/assets/videos/state/camera-pan/04.mp4?v=ba80d41"
+    },
+    {
+      "file": "occlusion-01.mp4",
+      "url": "https://remind-applied.github.io/assets/videos/state/occlusion/01.mp4?v=ba80d41"
+    },
+    {
+      "file": "occlusion-02.mp4",
+      "url": "https://remind-applied.github.io/assets/videos/state/occlusion/02.mp4?v=ba80d41"
+    },
+    {
+      "file": "occlusion-04.mp4",
+      "url": "https://remind-applied.github.io/assets/videos/state/occlusion/04.mp4?v=ba80d41"
+    },
+    {
+      "file": "occlusion-12.mp4",
+      "url": "https://remind-applied.github.io/assets/videos/state/occlusion/12.mp4?v=ba80d41"
+    },
+    {
+      "file": "driving-left-condition.webp",
+      "url": "https://github.com/Tianshuo-Xu/Motion-Forcing/releases/download/v0.1-assets/more_driving_scene1--ours-left-cut-in-and-brake.webp"
+    },
+    {
+      "file": "driving-left.mp4",
+      "url": "https://github.com/Tianshuo-Xu/Motion-Forcing/releases/download/v0.1-assets/more_driving_scene1--ours-left-cut-in-and-brake.mp4"
+    },
+    {
+      "file": "driving-right-condition.webp",
+      "url": "https://github.com/Tianshuo-Xu/Motion-Forcing/releases/download/v0.1-assets/more_driving_scene1--ours-right-cut-in.webp"
+    },
+    {
+      "file": "driving-right.mp4",
+      "url": "https://github.com/Tianshuo-Xu/Motion-Forcing/releases/download/v0.1-assets/more_driving_scene1--ours-right-cut-in.mp4"
+    },
+    {
+      "file": "ego-left-condition.png",
+      "url": "https://github.com/Tianshuo-Xu/Motion-Forcing/releases/download/v0.1-assets/driving_ego_action--ours-left.png"
+    },
+    {
+      "file": "ego-left.mp4",
+      "url": "https://github.com/Tianshuo-Xu/Motion-Forcing/releases/download/v0.1-assets/driving_ego_action--ours-left.mp4"
+    },
+    {
+      "file": "ego-right-condition.png",
+      "url": "https://github.com/Tianshuo-Xu/Motion-Forcing/releases/download/v0.1-assets/driving_ego_action--ours-right.png"
+    },
+    {
+      "file": "ego-right.mp4",
+      "url": "https://github.com/Tianshuo-Xu/Motion-Forcing/releases/download/v0.1-assets/driving_ego_action--ours-right.mp4"
+    },
+    {
+      "file": "robot-one-condition.png",
+      "url": "https://github.com/Tianshuo-Xu/Motion-Forcing/releases/download/v0.1-assets/embodied_ai--case1--action1.png"
+    },
+    {
+      "file": "robot-one.mp4",
+      "url": "https://github.com/Tianshuo-Xu/Motion-Forcing/releases/download/v0.1-assets/embodied_ai--case1--action1.mp4"
+    },
+    {
+      "file": "robot-two-condition.png",
+      "url": "https://github.com/Tianshuo-Xu/Motion-Forcing/releases/download/v0.1-assets/embodied_ai--case1--action2.png"
+    },
+    {
+      "file": "robot-two.mp4",
+      "url": "https://github.com/Tianshuo-Xu/Motion-Forcing/releases/download/v0.1-assets/embodied_ai--case1--action2.mp4"
+    }
+  ]
+}
