@@ -8,7 +8,7 @@ A static research homepage for GitHub Pages at https://tianshuo-xu.github.io/.
 - ReMind and Motion Forcing, with switchable video demonstrations from the official project pages.
 - Research internships at Applied Intuition, Huawei, and MEGVII.
 - Eight selected publications, including first and equal-contribution author markers, with topic filters.
-- Email, Google Scholar, and GitHub contact links.
+- Click-to-email button, Google Scholar, and GitHub contact links. The email address is decoded only on click to reduce simple crawler harvesting; this is not a guarantee against automated extraction.
 
 ## Editing
 

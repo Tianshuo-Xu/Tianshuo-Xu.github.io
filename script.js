@@ -53,3 +53,9 @@ function closeMenu() { navigation.classList.remove('open'); toggle.setAttribute(
 toggle.addEventListener('click', () => { const open = navigation.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(open)); });
 navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
 document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
+
+// Decode the contact address only after a visitor clicks the email button.
+document.querySelector('#email-contact').addEventListener('click', () => {
+  const address = atob('dHh1NjQ3QGNvbm5lY3QuaGt1c3QtZ3ouZWR1LmNu');
+  window.location.href = 'mailto:' + address;
+});
