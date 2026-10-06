@@ -17,7 +17,7 @@ A static research homepage for GitHub Pages at https://tianshuo-xu.github.io/.
 - `styles.css`: typography and desktop/mobile layout.
 - `assets/portrait.jpg`: the supplied original portrait.
 
-The videos are served by the original public project sites and GitHub release assets. No copied video files or private research repositories are included. Google Scholar statistics are editorial values from the CV, not a live API feed.
+The videos are served by the original public project sites and GitHub release assets. No copied video files or private research repositories are included.
 
 ## Local preview
 
