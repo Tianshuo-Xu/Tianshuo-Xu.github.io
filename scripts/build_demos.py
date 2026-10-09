@@ -61,10 +61,10 @@ def main():
         return target
 
     chapters = [
-        ("Camera motion", "camera-pan", [1, 2, 3, 4],
-         ["Water flow", "Grating", "Dog motion", "Squeezing a lemon"]),
-        ("Occlusion and light changes", "occlusion", [1, 2, 4, 12],
-         ["Coffee pouring", "Mixing batter", "Batter spreading", "Light off and on"])
+        ("Camera motion", "camera-pan", [7, 9, 10, 6],
+         ["Liquid level rising", "Granular pile growing", "Batter spreading", "Pouring and filling"]),
+        ("Occlusion and light changes", "occlusion", [8, 9, 6, 11],
+         ["Filling through darkness", "Liquid overflow", "Foam rising", "Coffee filling"])
     ]
     chapter_files = []
     chapter_seconds = []

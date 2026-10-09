@@ -17,7 +17,7 @@ A static research homepage for GitHub Pages at https://tianshuo-xu.github.io/.
 - `styles.css`: typography and desktop/mobile layout.
 - `assets/portrait.jpg`: the supplied original portrait.
 
-The homepage serves compact, edited showcase videos in `assets/demos/`. ReMind combines eight complete examples into two chapters at original speed. Each Motion Forcing clip keeps two control images visible above synchronized results. `assets/demos/sources.json` records the original official project URLs.
+The homepage serves compact, edited showcase videos in `assets/demos/`. ReMind combines eight complete examples into two chapters at original speed, selected for visible state changes: pouring, rising liquid levels, foam growth, granular accumulation, and spreading batter. Each Motion Forcing clip keeps two control images visible above synchronized results. `assets/demos/sources.json` records the original official project URLs.
 
 ## Local preview
 
